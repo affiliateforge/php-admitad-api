@@ -1,0 +1,1 @@
+# php-admitad-api
