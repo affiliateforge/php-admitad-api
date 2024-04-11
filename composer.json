@@ -1,0 +1,39 @@
+{
+    "name": "affiliateforge/php-admitad-api",
+    "type": "library",
+    "description": "Provides Admitad API",
+    "keywords": ["admitad", "admitad api"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gleb Tuchinskii",
+            "email": "gleb.tuchinskii@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "psr/http-client": "^1.0",
+        "php-http/discovery": "^1.19"
+    },
+    "require-dev": {
+        "symfony/http-client": "^7.0",
+        "nyholm/psr7": "^1.8",
+        "phpunit/phpunit": "^10.5",
+        "php-http/mock-client": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Affiliateforge\\PhpAdmitadApi\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}
