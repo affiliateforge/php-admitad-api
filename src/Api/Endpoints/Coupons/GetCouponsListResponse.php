@@ -8,7 +8,7 @@ use Affiliateforge\PhpAdmitadApi\Api\ResponseMetaDTO;
 use Affiliateforge\PhpAdmitadApi\Api\Traits\HasMetaInResponse;
 use Psr\Http\Message\ResponseInterface;
 
-class GetListResponse extends ResponseDTO
+class GetCouponsListResponse extends ResponseDTO
 {
     use HasMetaInResponse;
 

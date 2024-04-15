@@ -3,12 +3,12 @@
 namespace Tests\Unit\Api\Endpoints\Coupons;
 
 use Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons\Entities\Coupon;
-use Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons\GetListResponse;
+use Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons\GetCouponsListResponse;
 use Affiliateforge\PhpAdmitadApi\Api\ResponseMetaDTO;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use PHPUnit\Framework\TestCase;
 
-class GetListResponseTest extends TestCase
+class GetCouponsListResponseTest extends TestCase
 {
     public function testGetters()
     {
@@ -18,7 +18,7 @@ JSON;
         $factory = new Psr17Factory();
         $response = $factory->createResponse(200, 'OK')
             ->withBody($factory->createStream($responseJson));
-        $dto = new GetListResponse($response);
+        $dto = new GetCouponsListResponse($response);
 
         $this->assertInstanceOf(ResponseMetaDTO::class, $dto->getMeta());
         $this->assertSame(1747, $dto->getMeta()->getCount());

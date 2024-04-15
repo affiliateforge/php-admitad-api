@@ -3,11 +3,11 @@
 namespace Tests\Unit\Api\Endpoints\Coupons;
 
 use Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons\Entities\Coupon;
-use Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons\GetSingleResponse;
+use Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons\GetSingleCouponResponse;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use PHPUnit\Framework\TestCase;
 
-class GetSingleResponseTest extends TestCase
+class GetSingleCouponResponseTest extends TestCase
 {
     public function testGetters()
     {
@@ -19,7 +19,7 @@ JSON;
         $response = $factory->createResponse(200, 'OK')
             ->withBody($factory->createStream($responseJson));
 
-        $dto = new GetSingleResponse($response);
+        $dto = new GetSingleCouponResponse($response);
         $this->assertInstanceOf(Coupon::class, $dto->getCoupon());
         $this->assertSame('active', $dto->getCoupon()->getStatus());
     }

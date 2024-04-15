@@ -2,16 +2,16 @@
 
 namespace Tests\Unit\Api\Endpoints\Coupons;
 
-use Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons\GetList;
-use Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons\GetListResponse;
+use Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons\GetCouponsList;
+use Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons\GetCouponsListResponse;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use PHPUnit\Framework\TestCase;
 
-class GetListTest extends TestCase
+class GetCouponsListTest extends TestCase
 {
     public function testEndpointConfiguration()
     {
-        $dto = new GetList(
+        $dto = new GetCouponsList(
             campaign: 3,
             category: 1,
             campaignCategory: 89,
@@ -44,6 +44,6 @@ class GetListTest extends TestCase
         ], $dto->getQueryParams());
 
         $mockResponse = (new Psr17Factory())->createResponse();
-        $this->assertInstanceOf(GetListResponse::class, $dto->makeResponseDTO($mockResponse));
+        $this->assertInstanceOf(GetCouponsListResponse::class, $dto->makeResponseDTO($mockResponse));
     }
 }

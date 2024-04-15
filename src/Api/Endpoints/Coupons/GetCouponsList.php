@@ -9,7 +9,7 @@ use Affiliateforge\PhpAdmitadApi\Api\ResponseMetaDTO;
 use Psr\Http\Message\ResponseInterface;
 use DateTime;
 
-class GetList extends CommandDTO
+class GetCouponsList extends CommandDTO
 {
     use GET;
 
@@ -53,8 +53,8 @@ class GetList extends CommandDTO
         return array_filter($params);
     }
 
-    public function makeResponseDTO(ResponseInterface $response): GetListResponse
+    public function makeResponseDTO(ResponseInterface $response): GetCouponsListResponse
     {
-        return new GetListResponse($response);
+        return new GetCouponsListResponse($response);
     }
 }
