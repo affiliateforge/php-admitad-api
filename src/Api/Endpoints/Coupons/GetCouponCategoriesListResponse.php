@@ -2,23 +2,21 @@
 
 namespace Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons;
 
-use Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons\Entities\Coupon;
+use Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons\Entities\Category;
 use Affiliateforge\PhpAdmitadApi\Api\ResponseDTO;
-use Affiliateforge\PhpAdmitadApi\Api\ResponseMetaDTO;
 use Affiliateforge\PhpAdmitadApi\Api\Traits\HasMetaInResponse;
-use Psr\Http\Message\ResponseInterface;
 
-class GetListResponse extends ResponseDTO
+class GetCouponCategoriesListResponse extends ResponseDTO
 {
     use HasMetaInResponse;
 
     /**
-     * @return array<Coupon>
+     * @return array<Category>
      */
     public function getResults(): array
     {
         return array_map(
-            fn (array $item) => new Coupon($item),
+            fn (array $item) => new Category($item),
             $this->getParsedBody()['results']
         );
     }

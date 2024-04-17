@@ -7,7 +7,7 @@ use Affiliateforge\PhpAdmitadApi\Api\ResponseDTO;
 use Affiliateforge\PhpAdmitadApi\Api\Traits\HttpMethods\GET;
 use Psr\Http\Message\ResponseInterface;
 
-class GetSingle extends CommandDTO
+class GetSingleCoupon extends CommandDTO
 {
     use GET;
 
@@ -20,8 +20,8 @@ class GetSingle extends CommandDTO
         return "/coupons/$this->id/";
     }
 
-    public function makeResponseDTO(ResponseInterface $response): ResponseDTO
+    public function makeResponseDTO(ResponseInterface $response): GetSingleCouponResponse
     {
-        return new GetSingleResponse($response);
+        return new GetSingleCouponResponse($response);
     }
 }

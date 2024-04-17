@@ -2,16 +2,17 @@
 
 namespace Tests\Unit\Api\Endpoints\Coupons;
 
-use Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons\GetList;
-use Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons\GetListResponse;
+use Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons\GetAdSpaceCouponsList;
+use Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons\GetAdSpaceCouponsListResponse;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use PHPUnit\Framework\TestCase;
 
-class GetListTest extends TestCase
+class GetAdSpaceCouponsListTest extends TestCase
 {
     public function testEndpointConfiguration()
     {
-        $dto = new GetList(
+        $dto = new GetAdSpaceCouponsList(
+            3,
             campaign: 3,
             category: 1,
             campaignCategory: 89,
@@ -26,7 +27,7 @@ class GetListTest extends TestCase
             language: 'de',
         );
 
-        $this->assertSame('/coupons/', $dto->getUrlPath());
+        $this->assertSame('/coupons/website/3/', $dto->getUrlPath());
         $this->assertSame("GET", $dto->getHttpMethod());
         $this->assertEmpty($dto->getBody());
         $this->assertSame([
@@ -44,6 +45,6 @@ class GetListTest extends TestCase
         ], $dto->getQueryParams());
 
         $mockResponse = (new Psr17Factory())->createResponse();
-        $this->assertInstanceOf(GetListResponse::class, $dto->makeResponseDTO($mockResponse));
+        $this->assertInstanceOf(GetAdSpaceCouponsListResponse::class, $dto->makeResponseDTO($mockResponse));
     }
 }
