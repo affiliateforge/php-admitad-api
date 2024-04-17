@@ -35,7 +35,18 @@ $headers = [
 $couponsCmd = new \Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons\GetList(limit: 1);
 $couponsResponse = $api->doRequest($couponsCmd, $headers);
 
-var_dump($couponsResponse->getResults());
+// check for request success
+if ($couponsResponse->isError()) {
+    $error = $couponsResponse->getErrorDTO();
+    var_dump([
+        'httpCode' => $error->getHttpCode(),
+        'httpCodePhrase' => $error->getHttpCodePhrase(),
+        'admitad_error_code' => $error->getErrorCode(),
+        'admitad_error_description' => $error->getErrorDescription(),
+    ]);
+} else {
+    var_dump($couponsResponse->getResults());
+}
 ```
 
 ### Description

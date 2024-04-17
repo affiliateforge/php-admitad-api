@@ -2,7 +2,7 @@
 
 # -- Project information
 
-project = 'Admitad API PHP Client'
+project = 'AdmitadAPI PHP Client'
 copyright = '2024, Affiliate Forge'
 author = 'Gleb Tuchinskii'
 
