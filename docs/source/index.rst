@@ -37,6 +37,9 @@ You can pass any implementation of the PSR-18 `Client Interface` when creating a
 
 ### Example
 
+For example, to get a list of coupons for a website, you first need to get an authorization token, and then
+use your token to get a list of coupons. The code for these requests will look like this
+
 .. code-block:: php
     $api = new \Affiliateforge\PhpAdmitadApi\APIClient();
 
