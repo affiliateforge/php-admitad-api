@@ -3,3 +3,4 @@
 /.phpunit.result.cache
 /docs/_build/
 /docs/endpoints/temaplate.rst
+/check.php
