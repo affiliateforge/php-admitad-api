@@ -14,4 +14,4 @@ Example: Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons\getList#
 
 ### Responses
 
-(тут писать про наследников и общие методы + что каждый роут возвращает соотвествующее дто)
+response
