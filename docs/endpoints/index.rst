@@ -53,3 +53,4 @@ Endpoints specification
     client_authorization
     refresh_token
     deeplink_generation
+    auxiliary_information
