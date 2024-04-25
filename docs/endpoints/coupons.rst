@@ -40,7 +40,7 @@ The response will contain the ``getMeta`` method, which returns a DTO with gette
 Also, the response will contain the method ``getResults`` , which returns an array of objects ``Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons\Entities\Coupon``.
 This entity have getters for each field from the response.
 Dates are returned as objects of the ``\DateTime`` class.
-For Campaign and Type objects, the methods will return DTO oblects with getters.
+For Campaign and Type objects, the methods will return DTO objects with getters.
 
 ~~~~
 
@@ -110,7 +110,7 @@ The response will contain the ``getMeta`` method, which returns a DTO with gette
 Also, the response will contain the method ``getResults`` , which returns an array of objects ``Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons\Entities\AdSpaceCoupon``.
 This entity have getters for each field from the response.
 Dates are returned as objects of the ``\DateTime`` class.
-For Campaign and Type objects, the methods will return DTO oblects with getters.
+For Campaign and Type objects, the methods will return DTO objects with getters.
 
 ~~~~
 

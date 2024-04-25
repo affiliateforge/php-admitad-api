@@ -7,7 +7,7 @@ use Affiliateforge\PhpAdmitadApi\Api\ResponseDTO;
 use Affiliateforge\PhpAdmitadApi\Api\Traits\HttpMethods\GET;
 use Psr\Http\Message\ResponseInterface;
 
-class GetAdvcampaignAffiliateProgramCategories extends CommandDTO
+class GetAdvCampaignAffiliateProgramCategories extends CommandDTO
 {
     use GET;
 

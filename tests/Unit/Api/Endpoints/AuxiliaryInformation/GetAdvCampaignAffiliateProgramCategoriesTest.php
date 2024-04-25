@@ -2,16 +2,16 @@
 
 namespace Tests\Unit\Api\Endpoints\AuxiliaryInformation;
 
-use Affiliateforge\PhpAdmitadApi\Api\Endpoints\AuxiliaryInformation\GetAdvcampaignAffiliateProgramCategories;
+use Affiliateforge\PhpAdmitadApi\Api\Endpoints\AuxiliaryInformation\GetAdvCampaignAffiliateProgramCategories;
 use Affiliateforge\PhpAdmitadApi\Api\Endpoints\AuxiliaryInformation\GetAffiliateProgramCategoriesResponse;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use PHPUnit\Framework\TestCase;
 
-class GetAdvcampaignAffiliateProgramCategoriesTest extends TestCase
+class GetAdvCampaignAffiliateProgramCategoriesTest extends TestCase
 {
     public function testEndpointConfiguration()
     {
-        $dto = new GetAdvcampaignAffiliateProgramCategories(
+        $dto = new GetAdvCampaignAffiliateProgramCategories(
             777,
             offset: 4,
             limit: 1,
