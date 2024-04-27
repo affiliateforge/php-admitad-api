@@ -2,21 +2,11 @@
 
 namespace Affiliateforge\PhpAdmitadApi\Api\Endpoints\PublisherReports\Entities;
 
-class ReportByAdSpace
+class AggregatedReportByAdSpace
 {
     public function __construct(
         private readonly array $data
     ){}
-
-    public function getWebsiteId(): int
-    {
-        return (int) $this->data['website_id'];
-    }
-
-    public function getWebsiteName(): string
-    {
-        return $this->data['website_name'];
-    }
 
     public function getViews(): int
     {
@@ -28,26 +18,6 @@ class ReportByAdSpace
         return $this->data['clicks'];
     }
 
-    public function getCTR(): float
-    {
-        return $this->data['ctr'];
-    }
-
-    public function getECPC(): float
-    {
-        return $this->data['ecpc'];
-    }
-
-    public function getECPM(): float
-    {
-        return $this->data['ecpm'];
-    }
-
-    public function getCR(): float
-    {
-        return $this->data['cr'];
-    }
-
     public function getLeadsSum(): int
     {
         return $this->data['leads_sum'];
@@ -56,6 +26,11 @@ class ReportByAdSpace
     public function getSalesSum(): int
     {
         return $this->data['sales_sum'];
+    }
+
+    public function getActionsSumTotal(): int
+    {
+        return $this->data['actions_sum_total'];
     }
 
     public function getPaymentSumOpen(): float
@@ -73,8 +48,23 @@ class ReportByAdSpace
         return $this->data['payment_sum_declined'];
     }
 
+    public function getPaymentSum(): float
+    {
+        return $this->data['payment_sum'];
+    }
+
     public function getCurrency(): string
     {
         return $this->data['currency'];
+    }
+
+    public function getCR(): float
+    {
+        return $this->data['cr'];
+    }
+
+    public function getECPC(): float
+    {
+        return $this->data['ecpc'];
     }
 }

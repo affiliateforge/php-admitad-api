@@ -54,3 +54,4 @@ Endpoints specification
     refresh_token
     deeplink_generation
     auxiliary_information
+    publisher_reports

@@ -15,8 +15,9 @@ class GetReportsByAdSpacesResponse extends ResponseDTO
      */
     public function getResults(): array
     {
-        return [
-
-        ];
+        return array_map(
+            fn(array $item) => new ReportByAdSpace($item),
+            $this->getParsedBody()['results'],
+        );
     }
 }

@@ -19,7 +19,6 @@ class GetReportsByAdSpaces extends CommandDTO
         private readonly ?int $website = null,
         private readonly ?int $campaign = null,
         private readonly ?string $subid = null,
-        private readonly ?bool $total = null,
         private readonly ?string $orderBy = null,
     ){}
 
@@ -38,14 +37,13 @@ class GetReportsByAdSpaces extends CommandDTO
             'website' => $this->website,
             'campaign' => $this->campaign,
             'subid' => $this->subid,
-            'total' => $this->total,
             'order_by' => $this->orderBy,
         ];
 
         return array_filter($params);
     }
 
-    public function makeResponseDTO(ResponseInterface $response): GetReportsByAdSpacesResponse
+    public function makeResponseDTO(ResponseInterface $response): ResponseDTO
     {
         return new GetReportsByAdSpacesResponse($response);
     }
