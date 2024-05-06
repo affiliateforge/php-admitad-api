@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Api\Endpoints\PublisherReports;
 
-use Affiliateforge\PhpAdmitadApi\Api\Endpoints\PublisherReports\Entities\AggregatedReportByAdSpace;
+use Affiliateforge\PhpAdmitadApi\Api\Endpoints\PublisherReports\Entities\AggregatedReport;
 use Affiliateforge\PhpAdmitadApi\Api\Endpoints\PublisherReports\GetAggregatedReportByAdSpacesResponse;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use PHPUnit\Framework\TestCase;
@@ -20,7 +20,7 @@ JSON;
         $dto = new GetAggregatedReportByAdSpacesResponse($response);
 
         $report = $dto->getReport();
-        $this->assertInstanceOf(AggregatedReportByAdSpace::class, $report);
+        $this->assertInstanceOf(AggregatedReport::class, $report);
 
         $this->assertSame(0, $report->getViews());
         $this->assertSame(24454, $report->getClicks());
