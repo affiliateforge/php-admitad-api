@@ -31,6 +31,9 @@ class APIClient
 
     private function buildRequest(CommandDTO $command, array $headers): RequestInterface
     {
+        $defaultHeaders = ['Content-Type' => 'application/x-www-form-urlencoded'];
+        $allHeaders = array_merge($defaultHeaders, $headers);
+
         $factory = new Psr17Factory();
 
         $uri = $factory->createUri(static::BASE_URL)
@@ -39,7 +42,7 @@ class APIClient
 
         $request = $factory->createRequest($command->getHttpMethod(), $uri)
             ->withBody($factory->createStream(json_encode($command->getBody())));
-        foreach ($headers as $name => $value) {
+        foreach ($allHeaders as $name => $value) {
             $request = $request->withHeader($name, $value);
         }
 
