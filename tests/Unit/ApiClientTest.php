@@ -35,10 +35,11 @@ class ApiClientTest extends TestCase
             urldecode($lastRequest->getUri()->__toString())
         );
         $this->assertSame('POST', $lastRequest->getMethod());
-        $this->assertSame([
+        $this->assertEquals([
             'Host' => ['api.admitad.com'],
             'Header-1' => ['H1'],
             'Header-2' => ['F', 'Z'],
+            'Content-Type' => ['application/x-www-form-urlencoded'],
         ], $lastRequest->getHeaders());
         $this->assertSame('{"body_1":"body-value1","body_array":["a","b","c"]}', $lastRequest->getBody()->__toString());
     }
