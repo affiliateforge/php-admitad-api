@@ -36,9 +36,20 @@ For example, many API endpoints require a token to be specified in the authoriza
 
 APIClient Configuration
 =======================
+**HTTP Client**
 
 You can pass any implementation of the PSR-18 ``Client Interface`` when creating a ``APIClient`` object.
 If no implementation is passed, the package will try to find one in your dependencies using the package ``php-http/discovery``.
+
+**Logging**
+
+You can pass the PSR-3 Logger as a second parameter to the ``APIClient``.
+Then the APIClient will log all executed requests and responses. It logs in two levels: debug and info.
+
+For the ``Debug`` level, it will log all the information before and after the request is executed: url, method, headers and request body.
+
+For the ``Info`` level, it will log the request and response only after execution
+and exclude the ``Authorization`` header from the request and ``access_token`` and ``refresh_token`` from the response body.
 
 Example
 =======
