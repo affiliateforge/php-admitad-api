@@ -1,13 +1,13 @@
 <?php
 
-namespace Affiliateforge\PhpAdmitadApi\Api\Endpoints\PublisherReports;
+namespace Affiliateforge\PhpAdmitadApi\Api\Endpoints\PublisherReports\ReportsForAffiliatePrograms;
 
 use Affiliateforge\PhpAdmitadApi\Api\CommandDTO;
 use Affiliateforge\PhpAdmitadApi\Api\ResponseDTO;
 use Affiliateforge\PhpAdmitadApi\Api\Traits\HttpMethods\GET;
 use Psr\Http\Message\ResponseInterface;
 
-class GetReportsByAdSpaces extends CommandDTO
+class GetReportsForAffiliatePrograms extends CommandDTO
 {
     use GET;
 
@@ -24,7 +24,7 @@ class GetReportsByAdSpaces extends CommandDTO
 
     public function getUrlPath(): string
     {
-        return '/statistics/websites/';
+        return '/statistics/campaigns/';
     }
 
     public function getQueryParams(): array
@@ -45,10 +45,10 @@ class GetReportsByAdSpaces extends CommandDTO
 
     /**
      * @param ResponseInterface $response
-     * @return GetReportsByAdSpacesResponse
+     * @return GetReportsForAffiliateProgramsResponse
      */
     public function makeResponseDTO(ResponseInterface $response): ResponseDTO
     {
-        return new GetReportsByAdSpacesResponse($response);
+        return new GetReportsForAffiliateProgramsResponse($response);
     }
 }

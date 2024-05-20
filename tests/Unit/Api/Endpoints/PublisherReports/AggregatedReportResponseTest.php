@@ -2,12 +2,12 @@
 
 namespace Tests\Unit\Api\Endpoints\PublisherReports;
 
+use Affiliateforge\PhpAdmitadApi\Api\Endpoints\PublisherReports\AggregatedReportResponse;
 use Affiliateforge\PhpAdmitadApi\Api\Endpoints\PublisherReports\Entities\AggregatedReport;
-use Affiliateforge\PhpAdmitadApi\Api\Endpoints\PublisherReports\GetAggregatedReportByAdSpacesResponse;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use PHPUnit\Framework\TestCase;
 
-class GetAggregatedReportByAdSpacesResponseTest extends TestCase
+class AggregatedReportResponseTest extends TestCase
 {
     public function testGetters()
     {
@@ -17,7 +17,7 @@ JSON;
         $factory = new Psr17Factory();
         $response = $factory->createResponse(200, 'OK')
             ->withBody($factory->createStream($responseJson));
-        $dto = new GetAggregatedReportByAdSpacesResponse($response);
+        $dto = new AggregatedReportResponse($response);
 
         $report = $dto->getReport();
         $this->assertInstanceOf(AggregatedReport::class, $report);

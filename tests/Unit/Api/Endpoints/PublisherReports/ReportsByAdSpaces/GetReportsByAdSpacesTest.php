@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Unit\Api\Endpoints\PublisherReports;
+namespace Tests\Unit\Api\Endpoints\PublisherReports\ReportsByAdSpaces;
 
-use Affiliateforge\PhpAdmitadApi\Api\Endpoints\PublisherReports\GetReportsByAdSpaces;
-use Affiliateforge\PhpAdmitadApi\Api\Endpoints\PublisherReports\GetReportsByAdSpacesResponse;
+use Affiliateforge\PhpAdmitadApi\Api\Endpoints\PublisherReports\ReportsByAdSpaces\GetReportsByAdSpaces;
+use Affiliateforge\PhpAdmitadApi\Api\Endpoints\PublisherReports\ReportsByAdSpaces\GetReportsByAdSpacesResponse;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use PHPUnit\Framework\TestCase;
 

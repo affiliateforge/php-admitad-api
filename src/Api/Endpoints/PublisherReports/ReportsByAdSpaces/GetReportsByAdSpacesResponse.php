@@ -1,6 +1,6 @@
 <?php
 
-namespace Affiliateforge\PhpAdmitadApi\Api\Endpoints\PublisherReports;
+namespace Affiliateforge\PhpAdmitadApi\Api\Endpoints\PublisherReports\ReportsByAdSpaces;
 
 use Affiliateforge\PhpAdmitadApi\Api\Endpoints\PublisherReports\Entities\ReportByAdSpace;
 use Affiliateforge\PhpAdmitadApi\Api\ResponseDTO;

@@ -4,15 +4,15 @@ namespace Affiliateforge\PhpAdmitadApi\Api\Endpoints\PublisherReports;
 
 use Psr\Http\Message\ResponseInterface;
 
-class GetAggregatedReportByAdSpaces extends GetReportsByAdSpaces
+trait GetAggregatedReportCommand
 {
     public function getQueryParams(): array
     {
         return [...parent::getQueryParams(), 'total' => 1];
     }
 
-    public function makeResponseDTO(ResponseInterface $response): GetAggregatedReportByAdSpacesResponse
+    public function makeResponseDTO(ResponseInterface $response): AggregatedReportResponse
     {
-        return new GetAggregatedReportByAdSpacesResponse($response);
+        return new AggregatedReportResponse($response);
     }
 }
