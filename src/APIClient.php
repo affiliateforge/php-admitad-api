@@ -104,10 +104,7 @@ class APIClient
         if (!empty($logRecord['headers']['Authorization'])) {
             $header = $logRecord['headers']['Authorization'][0];
             $authTypePrefix = explode(' ', $header)[0];
-            $logRecord['headers']['Authorization'][0] = $this->maskSecret(
-                $header,
-                $authTypePrefix . ' '
-            );
+            $logRecord['headers']['Authorization'][0] = $this->maskSecret($header, $authTypePrefix . ' ');
         }
 
         return $logRecord;
