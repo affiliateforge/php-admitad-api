@@ -99,7 +99,7 @@ class ApiClientTest extends TestCase
                         'Host' => ['api.admitad.com'],
                         'Content-Type' => ['application/x-www-form-urlencoded'],
                         'Header-1' => ['F', 'Z'],
-                        // No Authorization header
+                        'Authorization' => ['Bearer ***'], // Authorization token has been masked
                     ]),
                     'body' => '{"body_1":"body-value1","body_array":["a","b","c"]}',
                 ],
@@ -108,8 +108,11 @@ class ApiClientTest extends TestCase
                     'message' => 'OK',
                     'headers' => [],
                     'body' => [
-                        'key' => 'value'
-                        // No access_token and refresh_token fields
+                        'key' => 'value',
+                        // access_token and refresh_token fields are masked by count of chars
+                        'access_token' => '****************',
+                        'refresh_token' => '*****************',
+
                     ],
                 ],
             ])

@@ -90,19 +90,48 @@ class APIClient
             'response' => $debugLevelResponseData,
         ]);
 
-        $infoLevelRequestData = $debugLevelRequestData;
-        unset($infoLevelRequestData['headers']['Authorization']);
-
-        $infoLevelResponseData = $debugLevelResponseData;
-        unset($infoLevelResponseData['body']['access_token']);
-        unset($infoLevelResponseData['body']['refresh_token']);
-
         $this->logger->info("Response from Admitad API (INFO)", [
-            'request' => $infoLevelRequestData,
-            'response' => $infoLevelResponseData,
+            'request' => $this->maskSecretsInRequestLog($debugLevelRequestData),
+            'response' => $this->maskSecretsInResponseLog($debugLevelResponseData),
         ]);
 
         $request->getBody()->rewind();
         $response->getBody()->rewind();
+    }
+
+    private function maskSecretsInRequestLog(array $logRecord): array
+    {
+        if (!empty($logRecord['headers']['Authorization'])) {
+            $header = $logRecord['headers']['Authorization'][0];
+            $authTypePrefix = explode(' ', $header)[0];
+            $logRecord['headers']['Authorization'][0] = $this->maskSecret(
+                $header,
+                $authTypePrefix . ' '
+            );
+        }
+
+        return $logRecord;
+    }
+
+    private function maskSecretsInResponseLog(array $logRecord): array
+    {
+        if (!empty($logRecord['body']['access_token'])) {
+            $logRecord['body']['access_token'] = $this->maskSecret($logRecord['body']['access_token']);
+        }
+
+        if (!empty($logRecord['body']['refresh_token'])) {
+            $logRecord['body']['refresh_token'] = $this->maskSecret($logRecord['body']['refresh_token']);
+        }
+
+        return $logRecord;
+    }
+
+    private function maskSecret(string $secretPart, string $after = ''): string
+    {
+        if (!empty($after)) {
+            $secretPart = explode($after, $secretPart)[1];
+        }
+
+        return $after . str_repeat('*', mb_strlen($secretPart));
     }
 }
