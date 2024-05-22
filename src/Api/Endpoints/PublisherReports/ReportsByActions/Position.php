@@ -8,6 +8,11 @@ class Position
         protected readonly array $data
     ){}
 
+    public function getId(): int
+    {
+        return $this->data['id'];
+    }
+
     public function getTariffId(): int
     {
         return $this->data['tariff_id'];
