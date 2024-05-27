@@ -9,7 +9,7 @@
 project = 'AdmitadAPI PHP Client'
 copyright = '2024, Affiliate Forge'
 author = 'Gleb Tuchinskii'
-release = '1.0.4'
+release = '1.0.6'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
