@@ -19,7 +19,7 @@ class GetReportsBySubIDTest extends TestCase
             website: 1,
             campaign: 4,
             subid: ['est'],
-            orderBy: 'voluptatem',
+            orderBy: 'ecpc',
             groupSubids: 'corrupti',
         );
 
@@ -34,7 +34,7 @@ class GetReportsBySubIDTest extends TestCase
             'website' => 1,
             'campaign' => 4,
             'subid' => ['est'],
-            'order_by' => 'voluptatem',
+            'order_by' => 'ecpc',
             'group_subids' => 'corrupti',
         ], $dto->getQueryParams());
 

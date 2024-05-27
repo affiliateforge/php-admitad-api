@@ -18,7 +18,7 @@ class GetReportsBySourcesTest extends TestCase
             dateEnd: new \DateTime('2024-03-16 16:10:34'),
             website: 48,
             campaign: 74,
-            orderBy: 'corrupti',
+            orderBy: 'actions',
         );
 
         $this->assertSame('/statistics/sources/', $dto->getUrlPath());
@@ -31,7 +31,7 @@ class GetReportsBySourcesTest extends TestCase
             'date_end' => '16.03.2024',
             'website' => 48,
             'campaign' => 74,
-            'order_by' => 'corrupti',
+            'order_by' => 'actions',
         ], $dto->getQueryParams());
 
         $mockResponse = (new Psr17Factory())->createResponse();

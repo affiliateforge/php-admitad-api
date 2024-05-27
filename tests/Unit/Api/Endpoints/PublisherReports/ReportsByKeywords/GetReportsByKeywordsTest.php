@@ -19,7 +19,7 @@ class GetReportsByKeywordsTest extends TestCase
             website: 1,
             campaign: 45,
             source: 'voluptas',
-            orderBy: 'sint',
+            orderBy: 'clicks',
         );
 
         $this->assertSame('/statistics/keywords/', $dto->getUrlPath());
@@ -33,7 +33,7 @@ class GetReportsByKeywordsTest extends TestCase
             'website' => 1,
             'campaign' => 45,
             'source' => 'voluptas',
-            'order_by' => 'sint',
+            'order_by' => 'clicks',
         ], $dto->getQueryParams());
 
         $mockResponse = (new Psr17Factory())->createResponse();
