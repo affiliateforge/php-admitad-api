@@ -23,9 +23,9 @@ class AdSpaceCoupon
         return new Campaign($this->data['campaign']);
     }
 
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
-        return $this->data['description'];
+        return $this->data['description'] ?? null;
     }
 
     public function getShortName(): string
