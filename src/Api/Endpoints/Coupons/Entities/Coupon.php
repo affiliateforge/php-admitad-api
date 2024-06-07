@@ -103,9 +103,9 @@ class Coupon
         return $this->data['name'];
     }
 
-    public function getLanguage(): string
+    public function getLanguage(): ?string
     {
-        return $this->data['language'];
+        return $this->data['language'] ?? null;
     }
 
     public function isUnique(): bool
