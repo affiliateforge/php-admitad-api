@@ -2,6 +2,8 @@
 
 namespace Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons\Entities;
 
+use Exception;
+
 class AdSpaceCoupon
 {
     public function __construct(
@@ -38,14 +40,20 @@ class AdSpaceCoupon
         return $this->data['exclusive'];
     }
 
+    /**
+     * @throws Exception
+     */
     public function getDateStart(): \DateTime
     {
         return new \DateTime($this->data['date_start']);
     }
 
+    /**
+     * @throws Exception
+     */
     public function getDateEnd(): ?\DateTime
     {
-        return isset($this->data['date_end']) ? new \DateTime($this->data['date_end']) : null;
+        return is_null($this->data['date_end']) ? null : new \DateTime($this->data['date_end']);
     }
 
     public function getId(): int
