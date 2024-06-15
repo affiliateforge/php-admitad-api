@@ -109,5 +109,73 @@
     "promocode": "ADMITADCA30",
     "frameset_link": "",
     "goto_link": "https://zejcl.com/g/mmkzo5nv19083e13e4121a1fb2e417/?i=3"
+  },
+  {
+    "status": "active",
+    "rating": "0.00",
+    "campaign": {
+      "id": 37409,
+      "name": "Temu Many Geos",
+      "site_url": "https://temu.com/"
+    },
+    "description": "*The code is only valid with this specific link! - Limit one Offer per user for one order.",
+    "short_name": "AU ADMITAD Exclusive: 30% off for orders $39+, capped at $25. New User Only!",
+    "exclusive": true,
+    "date_end": null,
+    "date_start": "2024-04-18T07:28:09",
+    "id": 748736,
+    "regions": [
+      "AT"
+    ],
+    "discount": "30%",
+    "types": [
+      {
+        "id": 2,
+        "name": "Order discount"
+      }
+    ],
+    "image": "http://cdn.admitad.com/campaign/images/2023/5/18/37409-a2f8f0c50dc7fa13.svg",
+    "species": "promocode",
+    "categories": [
+      {
+        "id": 1,
+        "name": "Toys, Kids & Babies"
+      },
+      {
+        "id": 3,
+        "name": "Accessories & Bags"
+      },
+      {
+        "id": 4,
+        "name": "Shoes"
+      },
+      {
+        "id": 5,
+        "name": "Clothing"
+      },
+      {
+        "id": 7,
+        "name": "Homeware"
+      },
+      {
+        "id": 8,
+        "name": "Computers & Electronics"
+      },
+      {
+        "id": 24,
+        "name": "Outdoor Clothing & Equipment"
+      },
+      {
+        "id": 34,
+        "name": "Marketplaces (including Chinese Stores)"
+      }
+    ],
+    "name": "AU ADMITAD Exclusive: 30% off for orders $39+, capped at $25. New User Only!",
+    "language": "en",
+    "is_unique": false,
+    "is_personal": false,
+    "promocode": "ADMITADAU30",
+    "frameset_link": "",
+    "goto_link": "https://zejcl.com/g/xzip5slmk2083e13e4121a1fb2e417/?i=3"
   }
 ]
