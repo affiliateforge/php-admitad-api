@@ -177,5 +177,55 @@
     "promocode": "ADMITADAU30",
     "frameset_link": "",
     "goto_link": "https://zejcl.com/g/xzip5slmk2083e13e4121a1fb2e417/?i=3"
+  },
+  {
+    "status": "active",
+    "rating": "0.00",
+    "campaign": {
+      "id": 18757,
+      "name": "Dewal",
+      "site_url": "https://www.dewal.ru/"
+    },
+    "description": "",
+    "short_name": "Бесплатная доставка, при покупке от 2 499 ₽!",
+    "exclusive": false,
+    "date_end": "2024-10-31T23:59:00",
+    "date_start": "2024-06-05T16:28:00",
+    "id": 469631,
+    "regions": [
+      "BY",
+      "KZ",
+      "RU"
+    ],
+    "discount": null,
+    "types": [
+      {
+        "id": 1,
+        "name": "Free delivery"
+      }
+    ],
+    "image": "http://cdn.admitad.com/campaign/images/2021/4/7/18757-2990649403096106.svg",
+    "species": "action",
+    "categories": [
+      {
+        "id": 2,
+        "name": "Personal Care & Pharmacy"
+      },
+      {
+        "id": 8,
+        "name": "Computers & Electronics"
+      },
+      {
+        "id": 72,
+        "name": "Hobby & Stationery"
+      }
+    ],
+    "name": "Бесплатная доставка, при покупке от 2 499 ₽!",
+    "language": null,
+    "is_unique": false,
+    "is_personal": false,
+    "promocode": "НЕ НУЖЕН",
+    "frameset_link": "https://xyowz.com/coupon/ot6mnnez3p083e13e412e883c4cd87/?erid=LatgC5YWi",
+    "goto_link": "https://xyowz.com/g/p750ga3oh3083e13e412e883c4cd87/?i=3&erid=LatgC5YWi"
   }
 ]
