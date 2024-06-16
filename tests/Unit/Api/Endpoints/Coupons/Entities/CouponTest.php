@@ -13,7 +13,7 @@ class CouponTest extends TestCase
     public function testGetters()
     {
         $singleCouponResponseJson = <<<JSON
-{"status":"active","rating":"0.00","campaign":{"id":18018,"name":"Megamart","site_url":"https://megamart.com"},"description":"Super long description","short_name":"short name","exclusive":false,"date_end":"2024-04-14T23:59:00","date_start":"2024-04-10T00:00:00","id":777,"regions":["RU"],"discount":"1 500 ₽","types":[{"id":2,"name":"Discount on an order"}],"image":"http://cdn.admitad.com/campaign/images/tratata.svg","species":"promocode","categories":[{"id":8,"name":"Computers & Electronics"}],"name":"Name","language":"ru","is_unique":false,"is_personal":false}
+{"status":"active","rating":"0.00","campaign":{"id":18018,"name":"Megamart","site_url":"https://megamart.com"},"description":"Super long description","short_name":"short name","exclusive":false,"date_end": null,"date_start":"2024-04-10T00:00:00","id":777,"regions":["RU"],"discount":"1 500 ₽","types":[{"id":2,"name":"Discount on an order"}],"image":"http://cdn.admitad.com/campaign/images/tratata.svg","species":"promocode","categories":[{"id":8,"name":"Computers & Electronics"}],"name":"Name","language":"ru","is_unique":false,"is_personal":false}
 JSON;
 
         $dto = new Coupon(json_decode($singleCouponResponseJson, true));
@@ -23,7 +23,7 @@ JSON;
         $this->assertSame('Super long description', $dto->getDescription());
         $this->assertSame('short name', $dto->getShortName());
         $this->assertFalse($dto->isExclusive());
-        $this->assertEquals(new \DateTime('2024-04-14T23:59:00'), $dto->getDateEnd());
+        $this->assertNull($dto->getDateEnd());
         $this->assertEquals(new \DateTime('2024-04-10T00:00:00'), $dto->getDateStart());
         $this->assertSame(777, $dto->getId());
         $this->assertEquals(['RU'], $dto->getRegions());

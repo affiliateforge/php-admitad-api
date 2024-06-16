@@ -48,7 +48,7 @@ class Coupon
 
     public function getDateEnd(): ?\DateTime
     {
-        return isset($this->data['date_end']) ? new \DateTime($this->data['date_end']) : null;
+        return !empty($this->data['date_end']) ? new \DateTime($this->data['date_end']) : null;
     }
 
     public function getId(): int
