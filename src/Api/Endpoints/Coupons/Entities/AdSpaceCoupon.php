@@ -133,7 +133,7 @@ class AdSpaceCoupon
         return $this->data['goto_link'];
     }
 
-    public function getPromocode(): string
+    public function getPromocode(): ?string
     {
         return $this->data['promocode'];
     }
