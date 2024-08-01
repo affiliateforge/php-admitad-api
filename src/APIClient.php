@@ -6,6 +6,7 @@ use Affiliateforge\PhpAdmitadApi\Api\CommandDTO;
 use Affiliateforge\PhpAdmitadApi\Api\ResponseDTO;
 use Http\Discovery\Psr17Factory;
 use Http\Discovery\Psr18ClientDiscovery;
+use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 
@@ -21,6 +22,9 @@ class APIClient
         $this->httpClient = $httpClient ?? Psr18ClientDiscovery::find();
     }
 
+    /**
+     * @throws ClientExceptionInterface
+     */
     public function doRequest(CommandDTO $command, array $headers = []): ResponseDTO
     {
         $request = $this->buildRequest($command, $headers);

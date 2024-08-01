@@ -3,7 +3,6 @@
 namespace Affiliateforge\PhpAdmitadApi\Api\Endpoints\Coupons;
 
 use Affiliateforge\PhpAdmitadApi\Api\CommandDTO;
-use Affiliateforge\PhpAdmitadApi\Api\ResponseDTO;
 use Affiliateforge\PhpAdmitadApi\Api\Traits\HttpMethods\GET;
 use Psr\Http\Message\ResponseInterface;
 use DateTime;
@@ -15,7 +14,7 @@ class GetAdSpaceCouponsList extends CommandDTO
     public function __construct(
         private readonly int $spaceID,
         private readonly ?int $campaign = null,
-        private readonly ?int $category = null,
+        private readonly ?array $category = null,
         private readonly ?int $campaignCategory = null,
         private readonly ?int $type = null,
         private readonly ?string $search = null,
