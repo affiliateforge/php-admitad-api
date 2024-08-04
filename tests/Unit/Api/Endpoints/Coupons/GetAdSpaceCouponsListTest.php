@@ -13,8 +13,8 @@ class GetAdSpaceCouponsListTest extends TestCase
     {
         $dto = new GetAdSpaceCouponsList(
             3,
-            campaign: 3,
-            category: [1],
+            campaign: [3],
+            category: 1,
             campaignCategory: 89,
             type: 14,
             search: 'search-string',
@@ -31,8 +31,8 @@ class GetAdSpaceCouponsListTest extends TestCase
         $this->assertSame("GET", $dto->getHttpMethod());
         $this->assertEmpty($dto->getBody());
         $this->assertSame([
-            'campaign' => 3,
-            'category' => [1],
+            'campaign' => [3],
+            'category' => 1,
             'campaignCategory' => 89,
             'type' => 14,
             'search' => 'search-string',
